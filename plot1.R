@@ -1,11 +1,18 @@
 ## Read and subset the data
 df <- read.table(
-  "./data/household_power_consumption.txt",
-  header = TRUE,
+  pipe('grep "^[1-2]/2/2007" "./data/household_power_consumption.txt"'),
+  header = FALSE,
   sep=";",
-  na.strings = "?",
+  na.strings="?",
   stringsAsFactors = FALSE
 )
+
+names(df) <- read.table("./data/household_power_consumption.txt",
+                        nrows = 1,
+                        sep = ";",
+                        stringsAsFactors = FALSE
+                        )
+
 df <- df[df$Date == "1/2/2007" | df$Date == "2/2/2007", ]
 
 ## Start the png recording
