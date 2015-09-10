@@ -13,8 +13,6 @@ names(df) <- read.table("./data/household_power_consumption.txt",
                         stringsAsFactors = FALSE
                         )
 
-# df <- df[df$Date == "1/2/2007" | df$Date == "2/2/2007", ]
-
 ## Start the png recording
 png(filename = "plot1.png", width = 504, height = 504, units = "px")
 
