@@ -14,14 +14,14 @@ names(df) <- read.table("./data/household_power_consumption.txt",
 )
 
 ## Build a date time column in the data frome
-df$DateTime <- strptime(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S")
+df$Date_time <- strptime(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S")
 
 ## Start the png recording
 png(filename = "plot2.png", width = 504, height = 504, units = "px")
 
 ## Build the plot
-plot(df$DateTime, df$Global_active_power, type="n", xlab = "", ylab="Global Active Power (kilowatts)")
-lines(df$DateTime, df$Global_active_power, type="l")
+plot(df$Date_time, df$Global_active_power, type="n", xlab = "", ylab="Global Active Power (kilowatts)")
+lines(df$Date_time, df$Global_active_power, type="l")
 
 ## End the png recording
 dev.off()
