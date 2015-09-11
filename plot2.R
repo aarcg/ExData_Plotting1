@@ -17,7 +17,7 @@ names(df) <- read.table("./data/household_power_consumption.txt",
 df$Date_time <- strptime(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S")
 
 ## Start the png recording
-png(filename = "plot2.png", width = 504, height = 504, units = "px")
+png(filename = "plot2.png", width = 480, height = 480, units = "px")
 
 ## Build the plot
 plot(df$Date_time, df$Global_active_power, type="n", xlab = "", ylab="Global Active Power (kilowatts)")

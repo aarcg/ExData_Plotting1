@@ -14,7 +14,7 @@ names(df) <- read.table("./data/household_power_consumption.txt",
                         )
 
 ## Start the png recording
-png(filename = "plot1.png", width = 504, height = 504, units = "px")
+png(filename = "plot1.png", width = 480, height = 480, units = "px")
 
 ## Create the plot (histogram)
 hist(
